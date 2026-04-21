@@ -1,0 +1,381 @@
+[
+  {
+    "title": "مبانی اینترنت",
+    "author": "علیرضا جباریه",
+    "translator": "",
+    "year": "1391",
+    "publisher": "اتهاد",
+    "quantity": 4,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مبانی فناوری اطلاعات",
+    "author": "سعید روحانی_احد زارع",
+    "translator": "",
+    "year": "1390",
+    "publisher": "دانشگاه ازاد اسلامی",
+    "quantity": 2,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مبانی مدیریت فناوری اطلاعات",
+    "author": "علیرضا مقسمی",
+    "translator": "",
+    "year": "1387",
+    "publisher": "دانشگاه امام رضا",
+    "quantity": 0,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مبانی مدیریت فناوری اطلاعات",
+    "author": "دکتر محمد فتحیان_حاتم مهدوی",
+    "translator": "",
+    "year": "1393",
+    "publisher": "دانشگاه علم و صنعت",
+    "quantity": 2,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "اموزش گام به گام شبیه سازی شبکه های کامپیوترomnet++",
+    "author": "مریم قطبی راوندی",
+    "translator": "",
+    "year": "1391",
+    "publisher": "فرهنگ",
+    "quantity": 7,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "ذخیره و بازیابی اطلاعات",
+    "author": "حمید رضا مقسمی",
+    "translator": "",
+    "year": "1393",
+    "publisher": "گسترش علوم پایه",
+    "quantity": 2,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "اصول مهندسی اینترنت",
+    "author": "احسان ملکیان",
+    "translator": "",
+    "year": "1384",
+    "publisher": "نص",
+    "quantity": 6,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "interplanetary network",
+    "author": "مریم قطبی راوندی",
+    "translator": "",
+    "year": "1391",
+    "publisher": "خدمات فرهنگی کرمان",
+    "quantity": 12,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "python",
+    "author": "مینو سلطان شاهی_سید مجتبی جعفری_صباغ جعفری",
+    "translator": "",
+    "year": "1397",
+    "publisher": "نسل روشن",
+    "quantity": 2,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "python",
+    "author": "mohit bhaskar n.das",
+    "translator": "بهرام پاشایی",
+    "year": "1396",
+    "publisher": "اتهاد",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "اصول مهندسی اینترنت",
+    "author": "عین الله جعفری نژاد قومی",
+    "translator": "",
+    "year": "1389",
+    "publisher": "علوم رایانه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "معماری کامپیوتر",
+    "author": "مهندس علی برومندنیا_حمیدرضا مقسمی نیا",
+    "translator": "",
+    "year": "1385",
+    "publisher": "گسترش علوم پایه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "معماری کامپیوتر",
+    "author": "موریس مانو",
+    "translator": "بهروز فتحی",
+    "year": "1391",
+    "publisher": "فروزش",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "linux red hat",
+    "author": "FEDORA",
+    "translator": "مهندس مهرداد توانا_مهدس سعید هراتیان",
+    "year": "1384",
+    "publisher": "پارسه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "نظریه زبان ها و ماشین ها",
+    "author": "پیتر لینز",
+    "translator": "مهندس بابک سلیمی_مهندس مجتبی پورمحقق",
+    "year": "1388",
+    "publisher": "نما",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندس نرم افزار",
+    "author": "روگر اس.پرسمن",
+    "translator": "مهندس عین الله جعفر نژاد قومی_ابراهیم عامل محرابی",
+    "year": "1381",
+    "publisher": "دانش نگار",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندس نرم افزار",
+    "author": "راجر اس.پرسمن",
+    "translator": "محمد مهدی سالخورده حقیقی",
+    "year": "1382",
+    "publisher": "سروش",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مقدمه ای بر نظریه زبانها و ماشینها",
+    "author": "پیتر لینز",
+    "translator": "عبدالحسین صراف زاده",
+    "year": "1380",
+    "publisher": "ناقوس",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندس نرم افزار",
+    "author": "راجر اس.پرسمن",
+    "translator": "محمد مهدی سالخورده حقیقی",
+    "year": "1399",
+    "publisher": "انتشارات خراسان",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندس نرم افزار",
+    "author": "یان سامرویل",
+    "translator": "عین الله جعفرنژاد قمی",
+    "year": "1390",
+    "publisher": "علوم رایانه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندس نرم افزار",
+    "author": "ارسطو خلیلی فر",
+    "translator": "",
+    "year": "1396",
+    "publisher": "پوران پژوهش",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "Android apls",
+    "author": "onur cinar",
+    "translator": "جواد قنبر",
+    "year": "1395",
+    "publisher": "دانشگاهی کیان",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "R",
+    "author": "Margot tollefson",
+    "translator": "جواد قنبر",
+    "year": "1395",
+    "publisher": "دانشگاهی کیان",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "java",
+    "author": "mikael olsson",
+    "translator": "جواد قنبر",
+    "year": "1394",
+    "publisher": "دانشگاهی کیان",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "java script",
+    "author": "mikael olsson",
+    "translator": "جواد قنبر",
+    "year": "1395",
+    "publisher": "دانشگاهی کیان",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "مهندسی اینترنت",
+    "author": "سید محمد حسین مختار",
+    "translator": "",
+    "year": "1385",
+    "publisher": "کتاب اراد",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "گرافیک کامپیوتری",
+    "author": "حسن ولوی",
+    "translator": "",
+    "year": "1374",
+    "publisher": "مهر",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "photoshop cs",
+    "author": "کارلا رز",
+    "translator": "شیرین براتیون",
+    "year": "1384",
+    "publisher": "سیمین دخت",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "فتوشاپ",
+    "author": "مهسا شعبانی ایشکا",
+    "translator": "",
+    "year": "1397",
+    "publisher": "سها دانش",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "هوش مصنوعی",
+    "author": "مهندس رامین رهنمون",
+    "translator": "",
+    "year": "1385",
+    "publisher": "پارسه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "اصول و مبانی مدیریت",
+    "author": "دکتر غلامعلی طبرسا",
+    "translator": "",
+    "year": "1385",
+    "publisher": "پارسه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": [
+      {
+        "borrower_name": "زهرا زنده دل",
+        "borrower_id": "03121054705040",
+        "borrow_date": "1405-01-31",
+        "return_date": "1405-02-14",
+        "returned": true,
+        "actual_return_date": "1405-01-31"
+      }
+    ]
+  },
+  {
+    "title": "مفاهیم سیستم عامل",
+    "author": "حمید رضا مقسمی",
+    "translator": "",
+    "year": "1393",
+    "publisher": "گسترش علوم پایه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "پایگاه داده ها",
+    "author": "حمید رضا مقسمی",
+    "translator": "",
+    "year": "1393",
+    "publisher": "گسترش علوم پایه",
+    "quantity": 3,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "زبانهای برنامه سازی",
+    "author": "ترنس دبلیو.پرات_مارون وای.زیلکوویتز",
+    "translator": "عین الله جعفرنژاد قمی",
+    "year": "1380",
+    "publisher": "علوم رایانه",
+    "quantity": 3,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "ASP.net",
+    "author": "سید احسان یثربی نایینی_امیر بیژن نژاد",
+    "translator": "",
+    "year": "1395",
+    "publisher": "دانشگاه تربت حیدریه",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "ASP.net",
+    "author": "عین الله جعفری نژاد قومی",
+    "translator": "",
+    "year": "1390",
+    "publisher": "علوم رایانه",
+    "quantity": 2,
+    "active_loans": [],
+    "loan_history": []
+  },
+  {
+    "title": "ASP.net",
+    "author": "ایمار اسپانجارز",
+    "translator": "امیر احسان رضایی",
+    "year": "1393",
+    "publisher": "مهرگان قلم",
+    "quantity": 1,
+    "active_loans": [],
+    "loan_history": []
+  }
+]
