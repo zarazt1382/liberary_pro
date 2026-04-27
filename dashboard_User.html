@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>داشبورد کاربر</title>
+
+<style>
+/* ===== Layout & Base ===== */
+body {
+  margin: 0;
+  font-family: "Vazir", sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  direction: rtl;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #2f3640;
+  position: fixed;
+  top: 0; right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+.menu-item {
+  color: #dcdde1;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover, .menu-item.active {
+  background-color: #40739e;
+  color: #fff;
+}
+
+/* ===== Main content ===== */
+.main {
+  margin-right: 260px;
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header input[type="search"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 230px;
+}
+
+.section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ===== Table style ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+
+th {
+  background-color: #f3f3f3;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .main {
+    margin-right: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🧭 Sidebar -->
+<div class="sidebar">
+  <h2>داشبورد کاربر</h2>
+  <a href="#" class="menu-item active" onclick="showSection('info')">اطلاعات من</a>
+  <a href="#" class="menu-item" onclick="showSection('history')">سابقه امانت‌ها</a>
+  <a href="#" class="menu-item" onclick="showSection('renew')">تمدید امانت</a>
+  <a href="#" class="menu-item" onclick="showSection('contact')">ارتباط با ما</a>
+  <a href="#" class="menu-item" onclick="showSection('about')">درباره ما</a>
+  <a href="#" class="menu-item" onclick="logoutUser()">خروج از حساب</a>
+
+</div>
+
+<!-- 🔹 Main Content -->
+<div class="main">
+  <header>
+    <h1>خوش‌آمدی، <span id="userName"></span> 🌼</h1>
+  </header>
+
+  <!-- اطلاعات کاربر -->
+  <div id="info" class="section">
+    <h3>اطلاعات من</h3>
+    <p><strong>نام کامل:</strong> <span id="fullName"></span></p>
+    <p><strong>شماره دانشجویی:</strong> <span id="studentId"></span></p>
+    <p><strong>شماره تماس:</strong> <span id="phone"></span></p>
+    <p><strong>ایمیل:</strong> <span id="email"></span></p>
+  </div>
+
+  <!-- سابقه -->
+  <div id="history" class="section" style="display:none;">
+    <h3>سابقه امانت‌ها</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>عنوان کتاب</th>
+          <th>نویسنده</th>
+          <th>تاریخ امانت</th>
+          <th>تاریخ بازگشت</th>
+        </tr>
+      </thead>
+      <tbody id="historyTable"></tbody>
+    </table>
+  </div>
+
+  <div id="renew" class="section" style="display:none;">
+    <h3>تمدید امانت</h3>
+    <p>این بخش در نسخه بعدی فعال خواهد شد 🚀</p>
+  </div>
+
+  <div id="contact" class="section" style="display:none;">
+    <h3>ارتباط با ما</h3>
+        <p>اگه سوالی داشتی، پیشنهادی داری، یا خواستی یه گپی باهامون بزنی، اصلاً تردید نکن! راه‌های ارتباطی ما این پایین هست:</p>
+    
+    <ul>
+        <li><strong>شماره تماس:</strong> <span id="phoneNumber">09013619200</span></li>
+        <li><strong>ایمیل:</strong> <a href="mailto:info@ketabyar.com" id="emailAddress">info@ketabyar.com</a></li>
+        <li><strong>آدرس:</strong> <span id="address">خراسان رضوی ، نیشابور ، دانشگاه ملی مهارت دختران </span></li>
+    </ul>
+    
+    <p>ما همیشه مشتاق شنیدن صدای شما هستیم و سعی می‌کنیم در اسرع وقت به پیام‌هاتون جواب بدیم. یادت نره که نظرات و پیشنهادات شما به ما کمک می‌کنه "کتاب‌یار" رو بهتر و بهتر کنیم!</p>
+<br><br>
+    <h4 style="text-align: center; color:darkblue;" >با احترام،<br><br>تیم "کتاب‌یار"</h4>
+  </div>
+
+  <div id="about" class="section" style="display:none;">
+    <h3>درباره ما</h3>
+<p>سلام ! خیلی خوشحالیم که "کتاب‌یار" رو برای مدیریت کتابخونه‌ت انتخاب کردی. 😊</p>
+
+<p>می‌دونی که توی خیلی از کتابخونه‌های کوچیک یا حتی مدارس، کارها هنوز با دفتر و قلم انجام می‌شه یا از روش‌های خیلی ساده‌ای استفاده می‌کنن. اینجوری هم احتمال خطا بالا می‌ره، هم سخت می‌شه فهمید کدوم کتاب دست کیه و کی باید برگرده.</p>
+
+<p>ما این دغدغه رو داشتیم که چطور می‌شه این کارها رو خیلی راحت‌تر و اصولی‌تر کرد. برای همین "کتاب‌یار" رو ساختیم! هدف اصلی ما این بوده که یه سیستم ساده و در عین حال کارآمد داشته باشیم که بتونی همه‌ی کتاب‌ها و اعضای کتابخونه رو به راحتی ثبت کنی و جریان امانت دادن و پس گرفتن کتاب‌ها رو مثل آب خوردن مدیریت کنی.</p>
+
+<p>با "کتاب‌یار"، دیگه لازم نیست نگران اشتباهات دستی یا گم شدن اطلاعات باشی. این سیستم بهت کمک می‌کنه تا:</p>
+
+<ul>
+  <li><strong>اطلاعات رو سریع پیدا کنی:</strong> دیگه لازم نیست توی انبوهی از برگه‌ها دنبال یه کتاب یا مشخصات یه عضو بگردی.</li>
+  <li><strong>خطاها رو به حداقل برسونی:</strong> ثبت و مدیریت الکترونیکی، احتمال اشتباه رو خیلی کم می‌کنه.</li>
+  <li><strong>مدیریتت رو بهتر کنی:</strong> گزارش‌گیری و نظارت روی امانت‌ها خیلی راحت‌تر می‌شه.</li>
+</ul>
+
+<p>ما توی "کتاب‌یار" تلاش کردیم یه محیط کاربری ساده و دوستانه طراحی کنیم تا استفاده ازش برای همه‌ی اعضای کتابخونه لذت‌بخش باشه. امیدواریم "کتاب‌یار" بتونه یار و یاور خوبی برای کتابخونه‌ی شما باشه!</p>
+<br><br>
+<h4 style="text-align: center; color: #40739e;">طراحی شده توسط زهرا زنده دل تولائی </h4>
+
+</div>
+</div>
+
+<script>
+// ===== بررسی ورود =====
+const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
+if (!loggedUser) {
+  // اگر کاربر لاگین نکرده، بازگشت به صفحه ورود
+  window.location.href = "login_User.html";
+}
+
+// ===== نمایش داده‌ها =====
+const user = loggedUser;
+document.getElementById('userName').textContent = user.first_name + ' ' + user.last_name;
+document.getElementById('fullName').textContent = user.first_name + ' ' + user.last_name;
+document.getElementById('studentId').textContent = user.student_id;
+document.getElementById('phone').textContent = user.phone;
+document.getElementById('email').textContent = user.email;
+
+// سابقه کتاب‌های امانت‌گرفته
+const table = document.getElementById('historyTable');
+user.history.forEach(h => {
+  const row = `<tr>
+    <td>${h.book_title}</td>
+    <td>${h.author}</td>
+    <td>${h.borrow_date}</td>
+    <td>${h.return_date}</td>
+  </tr>`;
+  table.innerHTML += row;
+});
+
+// ===== سوئیچ بین بخش‌ها =====
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+
+  document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ===== جستجو در سابقه =====
+function searchBooks() {
+  const val = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('#historyTable tr').forEach(row => {
+    const match = row.textContent.toLowerCase().includes(val);
+    row.style.display = match ? '' : 'none';
+  });
+}
+function logoutUser() {
+    localStorage.removeItem('loggedUser');
+    window.location.href = 'login_User.html'; 
+}
+
+</script>
+
+</body>
+</html>

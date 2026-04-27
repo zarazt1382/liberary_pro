@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>ورود به سامانه</title>
+<style>
+  body { font-family: "Vazir", sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+  .login-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+  input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+  button { width: 100%; padding: 12px; background: #40739e; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+  #message { color: #e84118; margin-top: 10px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<div class="login-card">
+  <h2>ورود کاربران</h2>
+  <input type="text" id="phone" placeholder="شماره تماس (مثال: 0912...)" maxlength="11">
+  <input type="text" id="studentId" placeholder="شماره دانشجویی">
+  <button onclick="handleLogin()">ورود</button>
+  <div id="message"></div>
+</div>
+
+<script>
+async function handleLogin() {
+  const phone = document.getElementById('phone').value.trim();
+  const studentId = document.getElementById('studentId').value.trim();
+  const msg = document.getElementById('message');
+
+  // Regex: شماره تماس دقیقاً ۱۱ رقم
+  const phoneRegex = /^\d{11}$/;
+  // شماره دانشجویی: تا ۱۴ رقم (به صورت رشته باقی می‌ماند تا صفر اول حفظ شود)
+  const idRegex = /^\d{1,14}$/;
+
+  if (!phoneRegex.test(phone) || !idRegex.test(studentId)) {
+    msg.textContent = "لطفاً اطلاعات را با فرمت صحیح وارد کنید.";
+    return;
+  }
+
+  try {
+    const response = await fetch('library_users_fa.json');
+    const users = await response.json();
+
+    // جستجو در فایل بر اساس شماره تماس و شماره دانشجویی
+    const user = users.find(u => u.phone === phone && u.student_id === studentId);
+
+    if (user) {
+      localStorage.setItem('loggedUser', JSON.stringify(user));
+      window.location.href = "dashboard_User.html";
+    } else {
+      msg.textContent = "کاربری با این مشخصات یافت نشد.";
+    }
+  } catch (error) {
+    msg.textContent = "خطا در برقراری ارتباط با سرور.";
+  }
+}
+</script>
+</body>
+</html>

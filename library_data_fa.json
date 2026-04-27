@@ -99,7 +99,16 @@
     "year": "",
     "quantity": 1,
     "active_loans": [],
-    "loan_history": []
+    "loan_history": [
+      {
+        "borrower_name": "کاربر تست",
+        "borrower_id": "12345678912345",
+        "borrow_date": "1405-02-07",
+        "return_date": "1405-02-21",
+        "returned": true,
+        "actual_return_date": "1405-02-07"
+      }
+    ]
   },
   {
     "id": "7",
