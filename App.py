@@ -929,7 +929,7 @@ class LibraryManagementSystem:
                 active_loans.append({
                     'borrower_name': loan['borrower_name'],
                     'borrower_id': loan['borrower_id'],
-                    'book_title': book['title'],
+                    'book_title': book['book_name'],
                     'borrow_date': loan['borrow_date'],
                     'return_date': loan['return_date'],
                     'days_diff': days_diff
@@ -954,7 +954,7 @@ class LibraryManagementSystem:
                 active_loans.append({
                     'borrower_name': loan['borrower_name'],
                     'borrower_id': loan['borrower_id'],
-                    'book_title': book['title'],
+                    'book_title': book['book_name'],
                     'borrow_date': loan['borrow_date'],
                     'return_date': loan['return_date'],
                     'days_diff': days_diff
@@ -976,7 +976,7 @@ class LibraryManagementSystem:
     def get_sample_books(self):
         return [
             {
-                'title': 'شازده کوچولو',
+                'book_name': 'شازده کوچولو',
                 'author': 'آنتوان دو سنت اگزوپری',
                 'translator': 'احمد شاملو',
                 'year': '1379',
@@ -986,7 +986,7 @@ class LibraryManagementSystem:
                 'loan_history': []
             },
             {
-                'title': 'ملت عشق',
+                'book_name': 'ملت عشق',
                 'author': 'الیف شافاک',
                 'translator': 'ارسلان فصیحی',
                 'year': '1393',
@@ -1057,9 +1057,9 @@ class LibraryManagementSystem:
                 status_text = 'امانت داده شده'
             
             self.tree.insert('', tk.END, values=(
-                book.get('title', ''),
+                book.get('book_name', ''),
                 book.get('author', ''),
-                book.get('year', ''),
+                book.get('publish_year', ''),
                 current_quantity,
                 status_text
             ))
@@ -1070,7 +1070,7 @@ class LibraryManagementSystem:
             self.tree.delete(item)
             
         for book in self.books:
-            if (query in book['title'].lower() or 
+            if (query in book['book_name'].lower() or 
                 query in book['author'].lower() or
                 query in book.get('translator', '').lower() or
                 query in book.get('publisher', '').lower()):
@@ -1083,8 +1083,8 @@ class LibraryManagementSystem:
                     status_text = 'امانت داده شده'
                 
                 self.tree.insert("", "end", values=(
-                    book['title'], book['author'], 
-                    book.get('year', ''), current_quantity, status_text
+                    book['book_name'], book['author'], 
+                    book.get('publish_year', ''), current_quantity, status_text
                 ))
 
     def on_book_select(self, event):
@@ -1108,7 +1108,7 @@ class LibraryManagementSystem:
                 self.current_user_label.config(text=f"{user['first_name']} {user['last_name']}")
 
     def update_selected_book_info(self, book):
-        self.selected_title.config(text=book['title'])
+        self.selected_title.config(text=book['book_name'])
         self.selected_author.config(text=book['author'])
         self.selected_quantity.config(text=f"{book.get('quantity', 1)} نسخه")
         
@@ -1184,7 +1184,7 @@ class LibraryManagementSystem:
                     if 'history' not in user:
                         user['history'] = []
                     transaction = {
-                        'book_title': book['title'],
+                        'book_title': book['book_name'],
                         'author': book['author'],
                         'borrow_date': borrow_date,
                         'return_date': return_date,
@@ -1326,7 +1326,7 @@ class LibraryManagementSystem:
             for book in self.books:
                 for loan in book.get('active_loans', []):
                     if loan.get('borrower_id') == user.get('student_id'):
-                        borrowed_books.append(f"{book['title']} (تاریخ بازگشت: {loan.get('return_date', '')})")
+                        borrowed_books.append(f"{book['book_name']} (تاریخ بازگشت: {loan.get('return_date', '')})")
             
             if borrowed_books:
                 books_list = "\n".join(f"• {book}" for book in borrowed_books)
@@ -1395,7 +1395,7 @@ class LibraryManagementSystem:
             if active_loans:
                 messagebox.showwarning(
                     "خطا", 
-                    f"کتاب '{book['title']}' در حال حاضر {len(active_loans)} امانت فعال دارد.\n"
+                    f"کتاب '{book['book_name']}' در حال حاضر {len(active_loans)} امانت فعال دارد.\n"
                     "لطفاً ابتدا تمام امانت‌ها برگردانده شود سپس اقدام به حذف کنید."
                 )
                 return
@@ -1403,7 +1403,7 @@ class LibraryManagementSystem:
             result = messagebox.askyesno(
                 "تأیید حذف کتاب",
                 f"آیا از حذف کتاب زیر مطمئن هستید؟\n\n"
-                f"📖 عنوان: {book['title']}\n"
+                f"📖 عنوان: {book['book_name']}\n"
                 f"✍️ نویسنده: {book['author']}\n"
                 f"🔢 تعداد موجودی: {book.get('quantity', 1)}\n\n"
                 f"⚠️ این عمل غیرقابل بازگشت است!"
@@ -1666,7 +1666,7 @@ class LibraryManagementSystem:
                             loan_data = {
                                 'borrower_name': loan.get('borrower_name', ''),
                                 'borrower_id': loan.get('borrower_id', ''),
-                                'book_title': book['title'],
+                                'book_title': book['book_name'],
                                 'borrow_date': loan.get('borrow_date', ''),
                                 'return_date': loan['return_date'],
                                 'days_remaining': days_remaining
@@ -1747,7 +1747,7 @@ class LibraryManagementSystem:
                 all_loans.append({
                     'borrower_name': loan.get('borrower_name', ''),
                     'borrower_id': loan.get('borrower_id', ''),
-                    'book_title': book['title'],
+                    'book_title': book['book_name'],
                     'borrow_date': loan.get('borrow_date', ''),
                     'return_date': loan.get('return_date', '')
                 })
@@ -1867,7 +1867,7 @@ class LibraryManagementSystem:
             result = messagebox.askyesno(
                 "تأیید امانت",
                 f"آیا از امانت دادن کتاب زیر مطمئن هستید؟\n\n"
-                f"📖 کتاب: {book['title']}\n"
+                f"📖 کتاب: {book['book_name']}\n"
                 f"✍️ نویسنده: {book['author']}\n"
                 f"👤 کاربر: {self.current_user['first_name']} {self.current_user['last_name']}"
             )
@@ -1897,7 +1897,7 @@ class LibraryManagementSystem:
                     if 'history' not in user:
                         user['history'] = []
                     transaction = {
-                        'book_title': book['title'],
+                        'book_title': book['book_name'],
                         'author': book['author'],
                         'borrow_date': borrow_date,
                         'return_date': return_date,
@@ -1914,7 +1914,7 @@ class LibraryManagementSystem:
             messagebox.showinfo(
                 "موفقیت",
                 f"✅ کتاب با موفقیت امانت داده شد\n\n"
-                f"📖 کتاب: {book['title']}\n"
+                f"📖 کتاب: {book['book_name']}\n"
                 f"👤 گیرنده: {new_loan['borrower_name']}\n"
                 f"📅 تاریخ امانت: {borrow_date}\n"
                 f"⏰ تاریخ بازگشت: {return_date}"
@@ -1961,7 +1961,7 @@ class LibraryManagementSystem:
             messagebox.showinfo(
                 "موفقیت", 
                 f"✅ کتاب با موفقیت بازگردانده شد\n\n"
-                f"📖 کتاب: {book['title']}\n"
+                f"📖 کتاب: {book['book_name']}\n"
                 f"🔢 {len(active_loans)} امانت بازگردانده شد"
             )
 
@@ -2107,7 +2107,7 @@ class LibraryManagementSystem:
         for i, book in enumerate(self.books):
             if 'loan_history' in book and book['loan_history']:
                 count = len(book['loan_history'])
-                tree.insert('', tk.END, values=(book['title'], f"{count} رکورد"), tags=(str(i),))
+                tree.insert('', tk.END, values=(book['book_name'], f"{count} رکورد"), tags=(str(i),))
                 book_indices.append(i)
         
         if not book_indices:

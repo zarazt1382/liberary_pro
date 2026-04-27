@@ -11,7 +11,16 @@
     "year": "",
     "quantity": 1,
     "active_loans": [],
-    "loan_history": []
+    "loan_history": [
+      {
+        "borrower_name": "زهرا زنده دل",
+        "borrower_id": "03121054705040",
+        "borrow_date": "1405-02-07",
+        "return_date": "1405-02-21",
+        "returned": true,
+        "actual_return_date": "1405-02-07"
+      }
+    ]
   },
   {
     "id": "2",
@@ -39,7 +48,16 @@
     "year": "",
     "quantity": 1,
     "active_loans": [],
-    "loan_history": []
+    "loan_history": [
+      {
+        "borrower_name": "زهرا زنده دل",
+        "borrower_id": "03121054705040",
+        "borrow_date": "1405-02-07",
+        "return_date": "1405-02-21",
+        "returned": true,
+        "actual_return_date": "1405-02-07"
+      }
+    ]
   },
   {
     "id": "4",
