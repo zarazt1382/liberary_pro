@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+    <meta charset="UTF-8">
+    <title>داشبورد کتاب‌یار</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root {
+            --background-day: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            --background-night: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #2c3e50 100%);
+            --text-color-day: #333;
+            --text-color-night: #eee;
+            --header-bg-day: #3498db;
+            --header-bg-night: #1a252f;
+            --button-color-day: #3498db;
+            --button-color-night: #2980b9;
+            --card-bg-day: #ffffff;
+            --card-bg-night: #34495e;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            background: var(--background-day);
+            color: var(--text-color-day);
+            line-height: 1.6;
+            transition: background 0.5s ease, color 0.5s ease;
+            direction: rtl;
+        }
+
+        body.night-mode {
+            background: var(--background-night);
+            color: var(--text-color-night);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: var(--header-bg-day);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background 0.5s ease;
+        }
+
+        body.night-mode header {
+            background: var(--header-bg-night);
+        }
+        
+        body.night-mode footer {
+            background: var(--header-bg-night);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav-menu a:hover {
+            color: #ecf0f1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 30px;
+            background: var(--card-bg-day);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: background 0.5s ease;
+        }
+
+        body.night-mode .container {
+            background: var(--card-bg-night);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 400px;
+            background-color: #ccc; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #777;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--text-color-day); /* Separator for sections */
+        }
+        body.night-mode section {
+            border-bottom: 1px solid var(--text-color-night);
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color:white;
+            margin-top: 30px;
+            background: var(--header-bg-day);
+
+            
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Changed to right for better placement */
+            background: var(--button-color-day);
+            color: white;
+            padding: 12px 17px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background 0.5s ease;
+            z-index: 1001;
+        }
+
+        body.night-mode .scroll-top {
+            background: var(--button-color-night);
+        }
+
+        .toggle-theme {
+            cursor: pointer;
+            font-size: 1.3em;
+            margin-left: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><strong>کتاب‌یار</strong></div>
+    <nav class="nav-menu">
+        <a href="Search.php">جستجو کتاب</a>
+        <a href="login_User.html">پنل کاربر</a>
+        <a href="login.php">پنل مدیریت</a>
+    </nav>
+    <div style="display: flex; align-items: center;">
+        <span class="toggle-theme" onclick="toggleTheme()">🌙</span>
+    </div>
+</header>
+
+<div id="welcome" class="container">
+    <h1>به دنیای شگفت‌انگیز “کتاب‌یار” خوش اومدی! ✨</h1>
+    <p>
+    اصلاً فکرشو کردی که مدیریت کلی کتاب و اطلاعات کتابخونه چقدر می‌تونه شیرین و راحت بشه؟ ما هم یه زمانی همین فکر رو می‌کردیم! راستش رو بخوای، یه خورده از سردرگمی‌ها و کارهای تکراری با نامه‌ها و برگه‌های پر از خط‌خطی خسته شده بودیم. دلمون می‌خواست یه دستیار هوشمند و البته خودمونی داشته باشیم که همه‌ی این دردسرها رو از دوشمون برداره و تازه، کلی هم راهنماییمون کنه.
+    </p>
+    <p>
+    برای همینم بود که “کتاب‌یار” به دنیا اومد! 🚀 یه سیستم مدیریت کتابخانه که از دل همین نیازها و دغدغه‌ها بیرون اومده. ما اینجا هستیم تا بهت کمک کنیم از شر کاغذبازی‌ها خلاص بشی، وقت بیشتری برای کارهایی که واقعاً دوست داری داشته باشی، و مهم‌تر از همه، تجربه‌ی فوق‌العاده‌ای از مدیریت منظم و سریع کتابخونه‌ت داشته باشی. کتاب‌یار فقط یه نرم‌افزار نیست، یه دوست و همراهه که کنارت قدم به قدم، مسیر رو برات هموار می‌کنه.
+    </p>
+    <p>
+    با کتاب‌یار، دیگه لازم نیست نگران گم شدن یه کتاب خاص باشی یا اینکه اعضای کتابخونه‌ت کی چی امانت گرفتن. همه چیز اینجا، توی یه فضای امن و کاربردی، دم دستته. از طراحی شیک و مدرنش بگیر تا قابلیت‌های هوشمندی که روز به روز بهتر می‌شن، همه‌چی رو با عشق برات ساختیم تا لذت ببری.
+    </p>
+    <div class="hero-img" style="background-image: url('https://tiktarh.com/storage/images/product_image/69145ad601185397120dd924/1762941817-Shbk1001067(www.tiktarh.com).jpg');">
+           
+    </div>
+
+    <section id="about">
+        <p><strong>با کتاب‌یار، چی گیرت میاد؟</strong></p><br>
+        <ul>
+        <li><strong>یه عالمه وقت اضافه!</strong> ⏰ دیگه لازم نیست ساعت‌ها وقتتو صرف پیدا کردن کتاب یا ثبت اطلاعات کنی.</li><br>
+        <li><strong>استرس صفر!</strong> 🧘‍♀️ همه‌چی مرتب و دسته‌بندی شده‌ست. هیچ کتابی گم نمی‌شه.</li><br>
+        <li><strong>اطلاعات دقیق و به‌روز:</strong> 📊 همیشه می‌دونی چی داری، کی امانت داده، کی باید برگردونه.</li><br>
+        <li><strong>طراحی چشم‌نواز:</strong> 🎨 یه محیط کاربری که چشماتو نوازش می‌ده و کار کردن باهاشو لذت‌بخش می‌کنه.</li><br>
+        <li><strong>حالت شب و روز:</strong> 🌙☀️ چشمات دیگه خسته نمی‌شه، هر وقت خودت دوست داری تم رو عوض کن.</li><br>
+        <li><strong>پشتیبانی همیشگی:</strong> 🤝 ما همیشه اینجاییم تا کمکت کنیم و به سوالاتت جواب بدیم.</li><br>
+        </ul>
+
+    </section>
+
+    <section id="contact">
+       <h3>ارتباط با ما</h3>
+        <p>اگه سوالی داشتی، پیشنهادی داری، یا خواستی یه گپی باهامون بزنی، اصلاً تردید نکن! راه‌های ارتباطی ما این پایین هست:</p>
+    
+    <ul>
+        <li><strong>شماره تماس:</strong> <span id="phoneNumber">09013619200</span></li>
+        <li><strong>ایمیل:</strong> <a href="mailto:info@ketabyar.com" id="emailAddress">info@ketabyar.com</a></li>
+        <li><strong>آدرس:</strong> <span id="address">خراسان رضوی ، نیشابور ، دانشگاه ملی مهارت دختران </span></li>
+    </ul>
+    
+    <p>ما همیشه مشتاق شنیدن صدای شما هستیم و سعی می‌کنیم در اسرع وقت به پیام‌هاتون جواب بدیم. یادت نره که نظرات و پیشنهادات شما به ما کمک می‌کنه "کتاب‌یار" رو بهتر و بهتر کنیم!</p>
+
+    </section>
+</div>
+
+<footer>
+    <p>تمامی حقوق برای پروژه کتاب‌یار محفوظ است © ۱۴۰۵</p>
+</footer>
+
+<div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+<!-- بعد از اون، بقیه اسکریپت‌ها -->
+<script>
+
+        // بررسی تنظیمات قبلی تم از لوکال استوریج
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'night') {
+            document.body.classList.add('night-mode');
+            document.querySelector('.toggle-theme').textContent = '☀️';
+        }
+    ;
+
+    const bodyElement = document.body;
+    const toggleThemeIcon = document.querySelector('.toggle-theme');
+
+
+    // تابع برای جابجایی بین حالت روز و شب
+    function toggleTheme() {
+        bodyElement.classList.toggle('night-mode');
+        const isNightMode = bodyElement.classList.contains('night-mode');
+        toggleThemeIcon.textContent = isNightMode ? '☀️' : '🌙'; // تغییر آیکون
+        localStorage.setItem('theme', isNightMode ? 'night' : 'day'); // ذخیره در لوکال استوریج
+    }
+
+    // تابع برای اسکرول به بخش خاصی
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+
+</body>
+</html>
